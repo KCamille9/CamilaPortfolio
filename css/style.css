@@ -23,7 +23,7 @@ body {
 /* Menu items container */
 .navbar .items ul {
   display: flex;
-  gap: 2rem; /* space between menu items */
+  gap: 6rem; /* space between menu items */
   list-style: none; /* remove bullets */
   margin: 0;
   padding: 0;
