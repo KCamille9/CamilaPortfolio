@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: space-between; /* logo left, menu right */
   align-items: center; /* vertical centering */
-  padding: 0 3%; /* horizontal padding */
+  padding: 0 8% 0 5%; /* horizontal padding */
   height: 60px; /* set navbar height */
   border-bottom: 3px solid #d9d9d9; /* bottom line */
   background-color: #fff; /* optional background */
@@ -38,6 +38,7 @@ body {
   line-height: 1; /* ensures vertical alignment */
   display: inline-block;
   padding: 0.5rem 0; /* vertical padding for breathing room */
+  font-size: 14px;
 }
 
 /* Optional hover effect */
