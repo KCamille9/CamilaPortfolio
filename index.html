@@ -2,10 +2,11 @@
 <html>
   <head>
     <title>Camille's Portfolio</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
+    <!-- Navbar -->
     <nav class="navbar">
       <div class="logo">
         <a href="#">CAMILLE A.</a>
@@ -18,5 +19,59 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="intro">
+        <div class="bio">
+          <div class="text-wrapper">
+            <h4>Hi, I'm Camille</h4>
+
+            <!-- updated h1 wrapper -->
+            <div class="h1-wrapper">
+              <span>Product &</span>
+              <span class="last-line">Visual Designer</span>
+            </div>
+
+            <!-- paragraph -->
+            <p class="match-last-line">
+              Designer based out of India with 1 year of experience crafting
+              intuitive, research-backed digital experiences. I love building
+              from 0 to 1 experiences.
+            </p>
+          </div>
+        </div>
+        <div class="profile">
+          <img
+            class="profile-img"
+            src="./assets/images/pic_graybkg.png"
+            alt="Profile"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- JS to match paragraph width to last line -->
+    <script>
+      const introTitle = document.querySelector(".h1-wrapper");
+      const p = document.querySelector(".match-last-line");
+
+      function setParagraphWidth() {
+        // document.createRange() creates a range object, which is like a virtual selection of content inside an element.
+        // range.selectNodeContents(h1) selects all the text inside your <h1>. selecting the whole heading with your mouse, but programmatically.
+        const range = document.createRange();
+        range.selectNodeContents(introTitle);
+
+        // getClientRects() returns a list of rectangles (bounding box), one for each line of text that the browser rendered.
+        // Each rectangle has properties like width, height, top, left.
+        const rects = range.getClientRects();
+        const lastLineWidth = rects[rects.length - 1].width;
+        p.style.width = lastLineWidth + "px";
+      }
+
+      // run on load and on window resize
+      window.addEventListener("load", setParagraphWidth);
+      window.addEventListener("resize", setParagraphWidth);
+    </script>
   </body>
 </html>
