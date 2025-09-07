@@ -51,7 +51,6 @@ body {
   display: grid;
   grid-template-columns: 2fr 1fr; /* text 2/3, image 1/3 */
   align-items: stretch;
-  /* gap: 2rem; */
   min-height: 60vh;
   padding: 2rem;
   margin-top: 3%;
@@ -161,4 +160,25 @@ h4 {
   h4 {
     font-size: clamp(20px, 4vw, 28px);
   }
+}
+
+/* Wrapper centrado y fluido */
+.projects-wrapper {
+  width: 90vw; /* ocupa 90% del ancho de la ventana */
+  max-width: 100%; /* nunca pase del 100% */
+  margin: 0 auto; /* centra horizontalmente */
+  box-sizing: border-box;
+}
+
+/* Grid responsive */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Cards aestetik */
+.card img {
+  width: 100%;
+  border-radius: 4px;
 }
