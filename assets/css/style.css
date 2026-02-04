@@ -3022,7 +3022,7 @@ video {
   --tw-text-opacity: 1;
   color: var(--colors-text-primary);
   margin-bottom: var(--spacing-12);
-  white-space: pre-wrap;
+  white-space: pre-line;
 }
 
 @media (max-width: 767px) {
@@ -3793,92 +3793,6 @@ video {
   }
 }
 
-.badge {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 8px;
-  height: 32px;
-  gap: 8px;
-  border-radius: 10px;
-  background: #121212;
-  position: relative;
-}
-
-.badge-text {
-  font-family: 'IBM Plex Sans Condensed';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 20px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #00ff22;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  z-index: 2;
-}
-
-@property --border-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-@keyframes rotateBorder {
-  from {
-    --border-angle: 0deg;
-  }
-  to {
-    --border-angle: 360deg;
-  }
-}
-
-.badge::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  padding: 1px;
-  background:
-    conic-gradient(
-      from var(--border-angle),
-      transparent 0%,
-      transparent 45%,
-      rgba(0, 255, 34, 0.3) 49%,
-      rgba(0, 255, 34, 0.3) 51%,
-      transparent 55%,
-      transparent 100%
-    );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: 1;
-  animation: rotateBorder 3s linear infinite;
-}
-
-.badge::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  background: rgba(18, 18, 18, 0.5);
-  z-index: -2;
-}
-
-.badge-positioner {
-  position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 20px;
-  z-index: 1000000;
-}
 
 .group:hover [data-loki-id="bPHifjTkWzjn"],
 .group:hover [data-loki-id="bKXLinygRcKM"],
